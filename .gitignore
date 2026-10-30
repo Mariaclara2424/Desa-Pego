@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.next/
+coverage/
+*.log
+
+# variáveis de ambiente (nunca subir)
+.env
+.env.*
+!.env.example
