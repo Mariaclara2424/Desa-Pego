@@ -1,0 +1,18 @@
+# Revisão de PRs em rodízio: cada pessoa revisa o módulo seguinte ao seu.
+# 01 revisa 02, 02 revisa 03, 03 revisa 04, 04 revisa 05 e 05 revisa 01.
+# O GitHub pede revisão automaticamente ao dono da pasta alterada no PR.
+
+# Módulo 01 - Contas e Perfil do Vendedor (Clarice) -> revisão: Módulo 05 (Maria Clara)
+/app/contas/      @Mariaclara2424
+
+# Módulo 02 - Anúncios e Simulador de Ganho (Livia) -> revisão: Módulo 01 (Clarice)
+/app/anuncios/    @claricenunes
+
+# Módulo 03 - Catálogo e Detalhes da Peça (Helena) -> revisão: Módulo 02 (Livia)
+/app/catalogo/    @livmoorais
+
+# Módulo 04 - Carrinho, Checkout e Pix (Marina) -> revisão: Módulo 03 (Helena)
+/app/checkout/    @helenafurtadoo
+
+# Módulo 05 - Pedidos, Carteira e Administração (Maria Clara) -> revisão: Módulo 04 (Marina)
+/app/pedidos/     @Marinasz05
