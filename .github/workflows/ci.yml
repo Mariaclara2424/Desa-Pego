@@ -1,0 +1,81 @@
+name: CI
+
+on:
+  push:
+    branches: ['feature/**']
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-test:
+    name: Lint e testes
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: desapego
+          POSTGRES_PASSWORD: desapego
+          POSTGRES_DB: desapego_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U desapego"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis:7
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: postgresql://desapego:desapego@localhost:5432/desapego_test
+      REDIS_URL: redis://localhost:6379
+      PIX_PROVIDER: simulado
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Enquanto o projeto ainda não tiver package.json/package-lock.json,
+      # a CI só avisa e passa. Quando a equipe criar o código, os passos abaixo rodam.
+      - name: Aviso (projeto Node ainda não criado)
+        if: hashFiles('package-lock.json') == ''
+        run: echo "::notice::Sem package-lock.json na raiz; lint e testes serão pulados."
+
+      - uses: actions/setup-node@v4
+        if: hashFiles('package-lock.json') != ''
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependências
+        if: hashFiles('package-lock.json') != ''
+        run: npm ci
+
+      - name: Lint
+        if: hashFiles('package-lock.json') != ''
+        run: npm run lint
+
+      - name: Testes (Jest)
+        if: hashFiles('package-lock.json') != ''
+        run: npm test
+
+  gitleaks:
+    name: Detecção de segredos (gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Instalar e rodar gitleaks
+        run: |
+          curl -sSfL https://github.com/gitleaks/gitleaks/releases/download/v8.21.2/gitleaks_8.21.2_linux_x64.tar.gz | tar -xz gitleaks
+          ./gitleaks detect --source . --redact --verbose
