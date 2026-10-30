@@ -2,9 +2,7 @@
 
 # Desa Pego
 
-### Brechó online comunitário
 
-Qualquer pessoa anuncia suas roupas e calçados, vê na hora quanto vai receber pela venda e o comprador paga via Pix.
 
 [![CI](https://github.com/Mariaclara2424/Desa-Pego/actions/workflows/ci.yml/badge.svg)](https://github.com/Mariaclara2424/Desa-Pego/actions/workflows/ci.yml)
 ![Node.js](https://img.shields.io/badge/Node.js-20-339933?logo=nodedotjs&logoColor=white)
