@@ -6,7 +6,7 @@
 
 Qualquer pessoa anuncia suas roupas e calçados, vê na hora quanto vai receber pela venda e o comprador paga via Pix.
 
-[![CI](https://github.com/Mariaclara2424/brecho/actions/workflows/ci.yml/badge.svg)](https://github.com/Mariaclara2424/brecho/actions/workflows/ci.yml)
+[![CI](https://github.com/Mariaclara2424/Desa-Pego/actions/workflows/ci.yml/badge.svg)](https://github.com/Mariaclara2424/Desa-Pego/actions/workflows/ci.yml)
 ![Node.js](https://img.shields.io/badge/Node.js-20-339933?logo=nodedotjs&logoColor=white)
 ![NestJS](https://img.shields.io/badge/NestJS-backend-E0234E?logo=nestjs&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-frontend-000000?logo=nextdotjs&logoColor=white)
@@ -14,7 +14,7 @@ Qualquer pessoa anuncia suas roupas e calçados, vê na hora quanto vai receber 
 ![Redis](https://img.shields.io/badge/Redis-cache%20e%20filas-DC382D?logo=redis&logoColor=white)
 ![Pix](https://img.shields.io/badge/pagamento-Pix-32BCAD)
 
-[Requisitos](REQUISITOS.md) · [Arquitetura](docs/ARQUITETURA.md) · [Issues](https://github.com/Mariaclara2424/brecho/issues) · [Quadro do projeto](https://github.com/users/Mariaclara2424/projects/2)
+[Requisitos](REQUISITOS.md) · [Arquitetura](docs/ARQUITETURA.md) · [Issues](https://github.com/Mariaclara2424/Desa-Pego/issues) · [Quadro do projeto](https://github.com/users/Mariaclara2424/projects/2)
 
 </div>
 
